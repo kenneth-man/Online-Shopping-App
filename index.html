@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" type="image/png" href="res/icon.png">
+        
+        <title>#12 &mdash; grocery cart</title>
+    </head>
+
+    <body>
+        <section class="container center">
+            <div class="cart">
+                <div class="cart--1 row">
+                    <svg class="cart__icon cart__icon--black">
+                        <use xlink:href="./res/sprite.svg#icon-phone"></use>
+                    </svg>
+
+                    <h1 class="cart__h1">+123 456 789</h1>
+                </div>
+
+                <h1 class="cart__title cart--2 center"><span style="font-style: normal;">🛍️</span> &nbsp; Online Shopping Cart</h1>
+
+                <div class="cart__list cart--3 column" id="list"></div>
+
+                <div class="cart__shopping column cart--4">
+                    <div class="cart__shopping--upper column" id="cart"></div>
+
+                    <div class="cart__shopping--lower column">
+                        <div class="cart__totals row">
+                            <h4 class="cart__h4">Total: &nbsp;</h4>
+
+                            <h4 class="cart__h4 cart__h4--bold" id="total">£0.00</h4>
+                        </div>
+
+                        <div class="cart__options row">
+                            <button class="cart__btn cart__btn--black center transition" id="clear">Clear Cart</button>
+
+                            <button class="cart__btn cart__btn--gold center transition" id="checkout">Checkout</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cart__balance column">
+                    <h1 class="cart__balance--h1">Balance:</h1>
+
+                    <h1 class="cart__balance--h1" id="balance">£400.00</h1>
+                </div>
+            </div>
+
+            <!-- TODO (popup): ARE YOU SURE YOU WANT TO CHECKOUT? -->
+            <!-- TODO (popup): ERROR: NO ITEMS FOUND IN SHOPPING CART -->
+            <!-- TODO (popup): ERROR: NOT ENOUGH MONEY REMAINING IN BALANCE TO PURCHASE ALL ITEMS -->
+            <!-- TODO (popup): ITEMS PURCHASED SUCCESSFULLY, TOTAL DEDUCTED FROM BALANCE -->
+            <div class="popup center transition hidden" id="popup">
+                <div class="popup__box hidden" id="popup-confirm">
+                    <h1 class="popup__h1">Are you sure you want to checkout ❓</h1>
+
+                    <div class="popup__btn-row">
+                        <button class="popup__btn popup__btn--yes center">Yes</button>
+
+                        <button class="popup__btn center">No</button>
+                    </div>
+                </div>
+
+                <div class="popup__box hidden" id="popup-no-items">
+                    <h1 class="popup__h1">⚠️ Error: No items found in Shopping Cart ⚠️</h1>
+
+                    <button class="popup__btn center">Okay</button>
+                </div>
+
+                <div class="popup__box hidden" id="popup-no-money">
+                    <h1 class="popup__h1">⚠️ Error: Not enough money in balance ⚠️</h1>
+
+                    <button class="popup__btn center">Okay</button>
+                </div>
+
+                <div class="popup__box hidden" id="popup-succeed">
+                    <h1 class="popup__h1">Items purchased successfully ✔️<br><span style="font-size: 17px;">Your balance has been updated</span></h1>
+
+                    <button class="popup__btn center">Yes</button>
+                </div>
+            </div>
+        </section>
+        
+        <script type="text/javascript" src="./script.js"></script>
+    </body>
+</html>
+
+
+
+<!-- https://jsbeginners.com/javascript-projects-for-beginners/ -->
